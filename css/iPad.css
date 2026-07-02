@@ -1,0 +1,399 @@
+/*
+========================================================
+AI Director Assistant
+V10 Foundation-R1
+Package-6
+Release-003
+
+File:
+css/ipad.css
+
+Architecture:
+iPad Fixed Workspace Layout
+
+Status:
+Foundation Stable
+========================================================
+*/
+
+/* ========================================
+   iPad/Desktop Mode
+======================================== */
+
+.ipad-mode{
+
+    display:flex;
+
+    flex-direction:row;
+
+    width:100vw;
+    height:100vh;
+
+    overflow:hidden;
+
+    background:#111;
+}
+
+/* ========================================
+   Workspace Panel
+======================================== */
+
+.ipad-panel{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-width:220px;
+
+    height:100vh;
+
+    transition:
+        flex .25s ease,
+        width .25s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+
+    border-right:
+        1px solid
+        #333;
+}
+
+/* ========================================
+   Focus
+======================================== */
+
+.ipad-panel.focused{
+
+    border-color:
+        #4da3ff;
+
+    box-shadow:
+        inset 0 0 0 1px
+        #4da3ff;
+}
+
+/* ========================================
+   Expanded
+======================================== */
+
+.ipad-panel.expanded{
+
+    z-index:20;
+}
+
+/* ========================================
+   Header
+======================================== */
+
+.ipad-panel
+.panel-header{
+
+    flex-shrink:0;
+
+    user-select:none;
+
+    cursor:pointer;
+
+    background:
+        linear-gradient(
+            180deg,
+            #2b2b2b,
+            #1f1f1f
+        );
+}
+
+.ipad-panel
+.panel-header:hover{
+
+    background:
+        #333;
+}
+
+/* ========================================
+   Content
+======================================== */
+
+.ipad-panel
+.panel-content{
+
+    flex:1;
+
+    overflow-x:hidden;
+
+    overflow-y:auto;
+
+    background:
+        #1b1b1b;
+}
+
+/* ========================================
+   Resize Handle
+======================================== */
+
+.workspace-resize-handle{
+
+    position:relative;
+
+    width:6px;
+
+    min-width:6px;
+
+    height:100vh;
+
+    background:
+        #1a1a1a;
+
+    cursor:
+        col-resize;
+
+    transition:
+        background .2s;
+}
+
+.workspace-resize-handle:hover{
+
+    background:
+        #4da3ff;
+}
+
+.workspace-resize-handle:active{
+
+    background:
+        #6fb5ff;
+}
+
+/* ========================================
+   Split Indicator
+======================================== */
+
+.workspace-resize-handle::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    width:2px;
+    height:48px;
+
+    background:
+        #555;
+
+    border-radius:
+        10px;
+}
+
+/* ========================================
+   Workspace Headers
+======================================== */
+
+.workspace-title{
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .5px;
+
+    text-transform:
+        uppercase;
+}
+
+/* ========================================
+   Workspace Body
+======================================== */
+
+.workspace-body{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    padding:12px;
+}
+
+/* ========================================
+   Scene / Shot List
+======================================== */
+
+.scene-list,
+.shot-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    overflow:auto;
+}
+
+.scene-item,
+.shot-item{
+
+    padding:10px;
+
+    border-radius:10px;
+
+    background:#252525;
+
+    border:
+        1px solid
+        #333;
+
+    transition:
+        border .2s,
+        background .2s;
+}
+
+.scene-item:hover,
+.shot-item:hover{
+
+    border-color:
+        #4da3ff;
+
+    background:
+        #2d2d2d;
+}
+
+.scene-item.active,
+.shot-item.active{
+
+    border-color:
+        #4da3ff;
+
+    background:
+        rgba(
+            77,
+            163,
+            255,
+            .15
+        );
+}
+
+/* ========================================
+   Storyboard
+======================================== */
+
+.storyboard-preview{
+
+    width:100%;
+
+    aspect-ratio:
+        16/9;
+
+    background:
+        #202020;
+
+    border:
+        1px dashed
+        #444;
+
+    border-radius:
+        10px;
+
+    overflow:hidden;
+}
+
+.storyboard-preview img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:
+        contain;
+}
+
+/* ========================================
+   Shooting
+======================================== */
+
+.take-item{
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:10px;
+}
+
+/* ========================================
+   Animation
+======================================== */
+
+.ipad-panel{
+
+    animation:
+        workspaceFade
+        .2s ease;
+}
+
+@keyframes workspaceFade{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateX(
+                10px
+            );
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateX(
+                0
+            );
+    }
+}
+
+/* ========================================
+   Responsive
+======================================== */
+
+@media
+(
+    max-width:1024px
+){
+
+    .ipad-panel{
+
+        min-width:
+            180px;
+    }
+}
+
+@media
+(
+    max-width:900px
+){
+
+    .ipad-mode{
+
+        display:none;
+    }
+}
