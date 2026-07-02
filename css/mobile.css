@@ -1,0 +1,520 @@
+/*
+========================================================
+AI Director Assistant
+V10 Foundation-R1
+Package-6
+Release-004
+
+File:
+css/mobile.css
+
+Architecture:
+Mobile Progressive Workspace
+
+Status:
+Foundation Stable
+========================================================
+*/
+
+/* ========================================
+   Mobile Root
+======================================== */
+
+.mobile-mode{
+
+    display:none;
+
+    position:relative;
+
+    width:100vw;
+    height:100vh;
+
+    overflow:hidden;
+
+    background:#111;
+}
+
+/* ========================================
+   Mobile Workspace Container
+======================================== */
+
+#mobileWorkspace{
+
+    position:relative;
+
+    width:100vw;
+    height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+/* ========================================
+   Top Workspace
+======================================== */
+
+#mobile-top{
+
+    position:relative;
+
+    width:100%;
+
+    height:50vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:#1b1b1b;
+
+    border-bottom:
+        1px solid
+        #333;
+
+    transition:
+        transform .3s ease,
+        height .25s ease;
+}
+
+/* ========================================
+   Divider
+======================================== */
+
+#mobile-divider{
+
+    height:6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #222,
+            #444,
+            #222
+        );
+
+    flex-shrink:0;
+}
+
+/* ========================================
+   Bottom Workspace
+======================================== */
+
+#mobile-bottom{
+
+    position:relative;
+
+    width:100%;
+
+    height:50vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:#181818;
+
+    transition:
+        transform .3s ease,
+        height .25s ease;
+}
+
+/* ========================================
+   Workspace Header
+======================================== */
+
+.mobile-title{
+
+    height:42px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:
+        0
+        16px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #2d2d2d,
+            #202020
+        );
+
+    border-bottom:
+        1px solid
+        #333;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    text-transform:
+        uppercase;
+}
+
+/* ========================================
+   Workspace Content
+======================================== */
+
+.mobile-content{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    padding:12px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+}
+
+/* ========================================
+   Active Workspace
+======================================== */
+
+.mobile-workspace.active{
+
+    box-shadow:
+        inset 0 0 0 1px
+        #4da3ff;
+}
+
+/* ========================================
+   Scene / Shot
+======================================== */
+
+.mobile-content
+.scene-item,
+
+.mobile-content
+.shot-item{
+
+    background:#252525;
+
+    border:
+        1px solid
+        #333;
+
+    border-radius:
+        10px;
+
+    padding:
+        12px;
+
+    margin-bottom:
+        8px;
+}
+
+.mobile-content
+.scene-item.active,
+
+.mobile-content
+.shot-item.active{
+
+    border-color:
+        #4da3ff;
+
+    background:
+        rgba(
+            77,
+            163,
+            255,
+            .15
+        );
+}
+
+/* ========================================
+   Field
+======================================== */
+
+.mobile-content
+.field{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
+}
+
+/* ========================================
+   Storyboard
+======================================== */
+
+.mobile-content
+.storyboard-preview{
+
+    width:100%;
+
+    aspect-ratio:
+        16/9;
+
+    background:#222;
+
+    border:
+        1px dashed
+        #444;
+
+    border-radius:
+        10px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+}
+
+.mobile-content
+.storyboard-preview
+img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:
+        contain;
+}
+
+/* ========================================
+   Shooting Take
+======================================== */
+
+.mobile-content
+.take-item{
+
+    display:flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:10px;
+
+    background:#252525;
+
+    border:
+        1px solid
+        #333;
+
+    border-radius:
+        10px;
+
+    padding:10px;
+}
+
+/* ========================================
+   Progressive Animation
+======================================== */
+
+.mobile-forward{
+
+    animation:
+        mobileForward
+        .3s ease;
+}
+
+.mobile-back{
+
+    animation:
+        mobileBack
+        .3s ease;
+}
+
+@keyframes mobileForward{
+
+    from{
+
+        transform:
+            translateY(
+                100%
+            );
+
+        opacity:0;
+    }
+
+    to{
+
+        transform:
+            translateY(
+                0
+            );
+
+        opacity:1;
+    }
+}
+
+@keyframes mobileBack{
+
+    from{
+
+        transform:
+            translateY(
+                -100%
+            );
+
+        opacity:0;
+    }
+
+    to{
+
+        transform:
+            translateY(
+                0
+            );
+
+        opacity:1;
+    }
+}
+
+/* ========================================
+   Snap Animation
+======================================== */
+
+.mobile-snapping{
+
+    transition:
+        transform
+        .25s
+        cubic-bezier(
+            .2,
+            .8,
+            .2,
+            1
+        );
+}
+
+/* ========================================
+   Ratio Preset
+======================================== */
+
+.mobile-ratio-50-50
+#mobile-top{
+
+    height:50vh;
+}
+
+.mobile-ratio-50-50
+#mobile-bottom{
+
+    height:50vh;
+}
+
+.mobile-ratio-40-60
+#mobile-top{
+
+    height:40vh;
+}
+
+.mobile-ratio-40-60
+#mobile-bottom{
+
+    height:60vh;
+}
+
+.mobile-ratio-60-40
+#mobile-top{
+
+    height:60vh;
+}
+
+.mobile-ratio-60-40
+#mobile-bottom{
+
+    height:40vh;
+}
+
+.mobile-ratio-30-70
+#mobile-top{
+
+    height:30vh;
+}
+
+.mobile-ratio-30-70
+#mobile-bottom{
+
+    height:70vh;
+}
+
+.mobile-ratio-70-30
+#mobile-top{
+
+    height:70vh;
+}
+
+.mobile-ratio-70-30
+#mobile-bottom{
+
+    height:30vh;
+}
+
+/* ========================================
+   Mobile Only
+======================================== */
+
+@media
+(
+    max-width:900px
+){
+
+    .ipad-mode{
+
+        display:none;
+    }
+
+    .mobile-mode{
+
+        display:block;
+    }
+}
+
+/* ========================================
+   Safe Area
+======================================== */
+
+@supports
+(
+    padding:
+    env(
+        safe-area-inset-top
+    )
+)
+{
+
+    #mobile-top{
+
+        padding-top:
+            env(
+                safe-area-inset-top
+            );
+    }
+
+    #mobile-bottom{
+
+        padding-bottom:
+            env(
+                safe-area-inset-bottom
+            );
+    }
+}
