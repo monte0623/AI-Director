@@ -3,151 +3,196 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="
-        width=device-width,
-        initial-scale=1,
-        viewport-fit=cover">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<title>
-    AI Director Assistant V10
-</title>
+    <title>AI Director V10</title>
 
-<meta
-    name="theme-color"
-    content="#111111">
+    <meta
+        name="theme-color"
+        content="#111827">
 
-<link
-    rel="manifest"
-    href="./manifest.json">
+    <link
+        rel="manifest"
+        href="manifest.json">
 
-<link
-    rel="stylesheet"
-    href="./css/main.css">
+    <link
+        rel="stylesheet"
+        href="css/main.css">
 
-<link
-    rel="stylesheet"
-    href="./css/ipad.css">
+    <link
+        rel="stylesheet"
+        href="css/layout.css">
 
-<link
-    rel="stylesheet"
-    href="./css/mobile.css">
+    <link
+        rel="stylesheet"
+        href="css/project.css">
 
 </head>
 
 <body>
 
-    <!-- Splash -->
+    <!-- ==========================
+         App
+    =========================== -->
 
-    <div id="app-splash">
+    <div id="app">
 
-        <div class="logo">
+        <!-- Header -->
 
-            AI Director
+        <header class="app-header">
 
-        </div>
+            <h1>
+                AI Director
+            </h1>
 
-        <div class="version">
+            <div class="build-version">
 
-            V10 Foundation-R1
+                V10
+                Build001-A
+
+            </div>
+
+        </header>
+
+        <!-- Main -->
+
+        <main
+            id="workspace"
+            class="workspace">
+
+            <!-- 首頁 -->
+
+            <section
+                id="projectHome"
+                class="page active">
+
+                <div class="page-title">
+
+                    製作案
+
+                </div>
+
+                <button
+                    id="btnNewProject"
+                    class="primary-button">
+
+                    ＋ 建立製作案
+
+                </button>
+
+                <div
+                    id="projectList"
+                    class="project-list">
+
+                    <div class="empty-card">
+
+                        目前尚無製作案
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Dialog -->
+
+    <div
+        id="projectDialog"
+        class="dialog hidden">
+
+        <div class="dialog-card">
+
+            <h2>
+
+                建立製作案
+
+            </h2>
+
+            <label>
+
+                製作案名稱 *
+
+                <input
+                    id="projectName"
+                    type="text"
+                    placeholder="請輸入製作案名稱">
+
+            </label>
+
+            <label>
+
+                客戶
+
+                <input
+                    id="clientName"
+                    type="text"
+                    placeholder="例如：可口可樂">
+
+            </label>
+
+            <label>
+
+                品牌
+
+                <input
+                    id="brandName"
+                    type="text"
+                    placeholder="例如：Coca-Cola">
+
+            </label>
+
+            <label>
+
+                製作說明
+
+                <textarea
+                    id="projectDescription"
+                    rows="5"
+                    placeholder="請輸入製作說明"></textarea>
+
+            </label>
+
+            <div class="dialog-buttons">
+
+                <button
+                    id="btnCancel">
+
+                    取消
+
+                </button>
+
+                <button
+                    id="btnSave"
+                    class="primary-button">
+
+                    儲存
+
+                </button>
+
+            </div>
 
         </div>
 
     </div>
 
-    <!-- Root -->
+    <!-- Scripts -->
 
-    <div id="app-root">
+    <script src="js/storage.js"></script>
 
-        <!-- iPad/Desktop -->
+    <script src="js/router.js"></script>
 
-        <div
-            id="ipadWorkspace"
-            class="workspace-root ipad-mode">
-        </div>
+    <script src="js/project/project.js"></script>
 
-        <!-- Mobile -->
-
-        <div
-            id="mobileWorkspace"
-            class="workspace-root mobile-mode">
-        </div>
-
-    </div>
-
-    <!-- ================================================= -->
-    <!-- Core -->
-    <!-- ================================================= -->
-
-    <script src="./js/event-bus.js"></script>
-
-    <script src="./js/model/domain-base.js"></script>
-
-    <script src="./js/model/project.js"></script>
-
-    <script src="./js/model/scene.js"></script>
-
-    <script src="./js/model/shot.js"></script>
-
-    <script src="./js/model/sequence.js"></script>
-
-    <script src="./js/project-store.js"></script>
-
-    <!-- ================================================= -->
-    <!-- Workspace Core -->
-    <!-- ================================================= -->
-
-    <script src="./js/workspace/workspace-state.js"></script>
-
-    <script src="./js/workspace/workspace-lifecycle.js"></script>
-
-    <script src="./js/workspace/workspace-registry.js"></script>
-
-    <!-- ================================================= -->
-    <!-- iPad -->
-    <!-- ================================================= -->
-
-    <script src="./js/ipad/fixed-workspace-engine.js"></script>
-
-    <script src="./js/ipad/workspace-layout.js"></script>
-
-    <script src="./js/ipad/workspace-focus.js"></script>
-
-    <!-- ================================================= -->
-    <!-- Mobile -->
-    <!-- ================================================= -->
-
-    <script src="./js/mobile/progressive-engine.js"></script>
-
-    <script src="./js/mobile/snap-engine.js"></script>
-
-    <script src="./js/mobile/ratio-engine.js"></script>
-
-    <!-- ================================================= -->
-    <!-- Workspace UI -->
-    <!-- ================================================= -->
-
-    <script src="./js/workspace/script.js"></script>
-
-    <script src="./js/workspace/scene.js"></script>
-
-    <script src="./js/workspace/shot.js"></script>
-
-    <script src="./js/workspace/detail.js"></script>
-
-    <script src="./js/workspace/storyboard.js"></script>
-
-    <script src="./js/workspace/shooting.js"></script>
-
-    <!-- ================================================= -->
-    <!-- App -->
-    <!-- ================================================= -->
-
-    <script src="./js/app.js"></script>
+    <script src="js/app.js"></script>
 
 </body>
 
-</html>
+</html>  
