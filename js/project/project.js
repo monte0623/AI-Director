@@ -177,6 +177,8 @@ const ProjectWorkspace = (() => {
 
         closeDialog();
 
+        Router.show("dashboardPage");
+
         renderDashboard();
 
     }
