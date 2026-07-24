@@ -6,7 +6,7 @@
 
 const Router = (() => {
 
-    let currentPage = "projectHome";
+    let currentPage = "dashboardPage";
 
     /* ==========================
        Initialize
