@@ -434,14 +434,16 @@ const ProjectWorkspace = (() => {
 
         }
 
-        document.getElementById(
-            "workspaceTitle"
-        ).textContent =
-            project.name;
+    document.getElementById(
+        "workspaceTitle"
+    ).textContent =
+        project.name;
 
-        Router.show(
-            "projectWorkspacePage"
-        );
+    loadWorkspace(project);
+
+    Router.show(
+        "projectWorkspacePage"
+    );
 
     }
 
